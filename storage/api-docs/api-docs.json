@@ -1,0 +1,88 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Jeux de sociétés",
+        "version": "1.0"
+    },
+    "paths": {
+        "/api": {},
+        "/api/jeux/": {
+            "get": {
+                "summary": "Liste des jeux",
+                "operationId": "412fdb9a00b2a299fc25e5232a63518e",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                }
+            }
+        },
+        "/api/jeux": {
+            "post": {
+                "summary": "Ajout d'un jeu",
+                "operationId": "ee40cca35f5d7fc5ccf303853d013125",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "nom_jeu": {
+                                        "description": "nom du jeu",
+                                        "type": "string",
+                                        "example": "Uno",
+                                        "nullable": "false"
+                                    },
+                                    "nb_joueurs": {
+                                        "description": "nombre de joeurs",
+                                        "type": "integer",
+                                        "example": 4,
+                                        "nullable": "false"
+                                    },
+                                    "regles": {
+                                        "description": "description des regles du jeu",
+                                        "type": "string",
+                                        "example": "avoir une seule carte",
+                                        "nullable": "true"
+                                    },
+                                    "materiel": {
+                                        "description": "liste du matériel",
+                                        "type": "string",
+                                        "example": "les cartes",
+                                        "nullable": "true"
+                                    },
+                                    "temps_partie": {
+                                        "description": "temps moyen d'une partie",
+                                        "type": "time",
+                                        "example": "20:00",
+                                        "nullable": "false"
+                                    },
+                                    "id_categorie": {
+                                        "description": "la catégorie du jeu",
+                                        "type": "integer",
+                                        "example": 1,
+                                        "nullable": "false"
+                                    },
+                                    "logo_jeu": {
+                                        "description": "image logo du jeu",
+                                        "type": "file",
+                                        "nullable": "true"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            }
+        }
+    }
+}
